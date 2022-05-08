@@ -1,0 +1,4 @@
+service:
+  base_url: "http://127.0.0.1:8123"
+users:
+  - "QdDChC7UMWnoEgASy7YsFF"
