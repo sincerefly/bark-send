@@ -9,7 +9,7 @@ import (
 
 var c Config
 
-func InitConfig() {
+func InitConfig() *Config {
 
 	// 程序执行路径
 	path, err := os.Getwd()
@@ -27,6 +27,7 @@ func InitConfig() {
 	if err != nil {
 		fmt.Printf("unable to decode into struct, %v", err)
 	}
+	return &c
 }
 
 func GetConfig() *Config {

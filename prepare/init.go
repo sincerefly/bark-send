@@ -2,8 +2,12 @@ package prepare
 
 import (
 	"bark-send/config"
+	"bark-send/logger"
 )
 
 func Init() {
-	config.InitConfig()
+	cfg := config.InitConfig()
+
+	//_ = os.Setenv("BARK_SEND_DEBUG", "true")
+	logger.InitLogger(&cfg.Log)
 }
