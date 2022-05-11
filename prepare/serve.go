@@ -1,14 +1,17 @@
 package prepare
 
 import (
+	"bark-send/api_service/router"
 	"bark-send/service"
 	"github.com/jasonlvhit/gocron"
+	"github.com/labstack/echo/v4"
 	"log"
 	"time"
 )
 
 func Server() {
 	Init()
+	go ListenApi()
 	SetCron()
 	Start()
 }
@@ -36,6 +39,14 @@ func SetCron() {
 	gocron.Every(5).Seconds().Do(service.SendAll, "⏰测试")
 }
 
+// Start 启动定时任务
 func Start() {
 	<-gocron.Start()
+}
+
+// InitApi 初始化 HTTP 服务
+func ListenApi() {
+	e := echo.New()
+	router.InitRouter(e)
+	e.Logger.Fatal(e.Start(":1323"))
 }
