@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"bark-send/config"
+	"bark-send/utils/config"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"os"
 	"sync"

@@ -1,9 +1,9 @@
 package service
 
 import (
-	"bark-send/config"
-	"bark-send/logger"
 	"bark-send/utils"
+	"bark-send/utils/config"
+	"bark-send/utils/logger"
 	"go.uber.org/zap"
 )
 

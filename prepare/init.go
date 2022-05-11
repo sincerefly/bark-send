@@ -1,8 +1,9 @@
 package prepare
 
 import (
-	"bark-send/config"
-	"bark-send/logger"
+	"bark-send/utils/config"
+	"bark-send/utils/logger"
+	"bark-send/utils/sqlite3"
 )
 
 func Init() {
@@ -10,4 +11,6 @@ func Init() {
 
 	//_ = os.Setenv("BARK_SEND_DEBUG", "true")
 	logger.InitLogger(&cfg.Log)
+
+	sqlite3.InitStore()
 }

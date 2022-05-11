@@ -4,7 +4,7 @@ type Config struct {
 	Service struct {
 		BaseUrl string `mapstructure:"base_url"`
 	}
-	Log Log
+	Log   Log
 	Users []string
 }
 
