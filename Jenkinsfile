@@ -16,16 +16,23 @@ pipeline {
         go 'go1.18'
     }
     environment {
-        GOROOT = "${root}"
-        PATH = "${root}/bin"
-        GO = "${root}/bin"
+//         HOME = "/tmp"
+//         GOROOT = "${root}"
+//         GOBIN = "${root}/bin"
+//         GOPATH = "${root}/go"
+//         PATH = "${root}/bin"
+//         GO = "${root}/bin"
+        GO114MODULE = 'on'
+        CGO_ENABLED = 0
+        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     }
     stages {
-        stage("build") {
+        stage("Build") {
             steps {
                 echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
-//                 sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bin/bark-send-linux'
+                sh 'go build'
+//                 sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bark-send-linux'
             }
         }
     }
