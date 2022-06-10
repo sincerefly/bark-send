@@ -32,7 +32,7 @@ pipeline {
                 echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
 //                 sh 'go build'
-                sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bark-send-linux'
+                sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bin/bark-send-linux'
             }
         }
     }
