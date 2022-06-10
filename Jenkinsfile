@@ -16,7 +16,7 @@ pipeline {
         go 'Go 1.18'
     }
     environment {
-        GOROOT = ${root}
+        GOROOT = "${root}"
         PATH = "${root}/bin"
         GO = "${root}/bin"
     }
