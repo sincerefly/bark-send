@@ -16,9 +16,9 @@ pipeline {
         go 'Go 1.18'
     }
     environment {
-        GO114MODULE = 'on'
-        CGO_ENABLED = 0
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+        GOROOT = ${root}
+        PATH = ${root}/bin
+        GO = ${root}/bin
     }
     stages {
         stage("build") {
