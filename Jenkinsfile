@@ -17,8 +17,8 @@ pipeline {
     }
     environment {
         GOROOT = ${root}
-        PATH = ${root}/bin
-        GO = ${root}/bin
+        PATH = "${root}/bin"
+        GO = "${root}/bin"
     }
     stages {
         stage("build") {
