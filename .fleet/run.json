@@ -1,0 +1,13 @@
+{
+  "name": "main",
+  "configurations": [
+    {
+        "name": "myCustomRunConfiguration",
+        "type": "go",
+        "mode": "debug",
+        "params": ["build"],
+        "goExecPath": "/usr/local/go/bin/go",
+        "buildTargets": "/Users/dong/git-home/bark-send/main.go"
+    }
+  ]
+}
