@@ -35,7 +35,9 @@ pipeline {
                 sh 'make bl_linux'
 //                 sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bin/bark-send-linux'
                 archiveArtifacts artifacts: 'bin/*', fingerprint: true
-                sh 'cp bin/bark-send-linux /tmp/bark-send-linux'
+                sh 'sudo supervisorctl stop bark-send'
+                sh 'sudo cp bin/bark-send-linux /opt/bark-send/bark-send-linux'
+                sh 'sudo supervisorctl start bark-send'
             }
         }
     }
