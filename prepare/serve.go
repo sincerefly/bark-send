@@ -36,7 +36,7 @@ func SetCron() {
 	gocron.Every(1).Day().At("21:00").Do(service.SendAll, "⏰喝水啦 21:00")
 	gocron.Every(1).Day().At("22:40").Do(service.SendAll, "⏰睡觉啦 22:40")
 
-	//gocron.Every(5).Seconds().Do(service.SendAll, "⏰测试")
+	gocron.Every(5).Seconds().Do(service.SendAll, "⏰测试")
 }
 
 // Start 启动定时任务
