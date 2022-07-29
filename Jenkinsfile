@@ -34,6 +34,7 @@ pipeline {
 //                 sh 'go build'
                 sh 'CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(GO_FLAGS) -v -o bin/bark-send-linux'
                 archiveArtifacts artifacts: 'bin/*', fingerprint: true
+                sh 'cp bin/bark-send-linux /tmp/bark-send-linux'
             }
         }
     }
